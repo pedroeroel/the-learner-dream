@@ -30,7 +30,7 @@ const handleGenerateQuestions = async () => {
     const qs = await generateQuestions(prompt); // await here!
     setQuestions(qs);
     setSelectedAnswers(Array(qs.length).fill(-1));
-  } catch (err) { 
+  } catch (_) { 
     setError("Failed to generate questions.");
   } finally {
     setLoading(false);
