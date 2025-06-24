@@ -17,6 +17,7 @@ export default async function generateQuestions(prompt: string) {
     let questions: Array<{ question: string; answers: string[]; correctAnswer: number }> = [];
     try {
         // @ts-expect-error
+        // response.text may not be typed, but we expect it to exist
         const cleanedText = response.text.replace(/^\s*```json\s*|^\s*```\s*$/gim, "");
         questions = JSON.parse(cleanedText as string);
     } catch (e) {
