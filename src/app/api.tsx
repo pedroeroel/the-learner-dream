@@ -31,7 +31,7 @@ export default async function generateQuestions(prompt: string) {
             model: "gemini-2.0-flash",
             contents: prompt,
             config: {
-                systemInstruction: "You're a specialist in creating exercises to train the user's knowledge. Generate a quiz with the numbers of questions the user asks (if not, just 10 questions), about the theme he asks, each with 5 (or the number the user asks) possible answers. Indicate the correct answer for each question with their index (starting from 0). ONLY return the array of questions as a valid JSON array, with no extra text, no explanations, and no formatting. Do not include any introductory or closing remarks. The response must be exactly: [{question: 'Question text', answers: ['Answer 1', 'Answer 2', 'Answer 3', 'Answer 4', 'Answer 5'], correctAnswer: 0}, ...]. ENSURE THAT THE CORRECT ANSWER IS REALLY ACCURATE.",
+                systemInstruction: "You're a specialist in creating exercises to train the user's knowledge. Generate a quiz with the numbers of questions the user asks (if not, just 10 questions), about the theme he asks, each with 5 (or the number the user asks) possible answers. Indicate the correct answer for each question with their index (starting from 0). ONLY return the array of questions as a valid JSON array, with no extra text, no explanations, and no formatting. Do not include any introductory or closing remarks. The response must be exactly: [{question: 'Question text', answers: ['Answer 1', 'Answer 2', 'Answer 3', 'Answer 4', 'Answer 5'], correctAnswer: 0}, ...]. ENSURE THAT THE CORRECT ANSWER INDEX IS ACCURATE.",
                 maxOutputTokens: 1000,
             }
         });
