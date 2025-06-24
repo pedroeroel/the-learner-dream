@@ -6,7 +6,7 @@ import { GoogleGenAI } from "@google/genai";
 export default async function generateQuestions(prompt: string) {
     const keys = process.env.GENAI_KEYS?.split(",").map(k => k.trim()).filter(Boolean) || [];
     let ai: GoogleGenAI | null = null;
-    let lastError: any = null;
+    let lastError: unknown = null;
 
     for (const [i, key] of keys.entries()) {
         try {
